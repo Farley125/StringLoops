@@ -54,13 +54,6 @@ public class StringLoops {
 
     public int countString(String searchString, String origString) {
         int counter = 0;
-        /*while (origString.indexOf(searchString) != -1)
-        {
-            int searchLength = searchString.length();
-            String reducedStr = origString.substring(origString.indexOf(0, origString.indexOf(searchString))) + origString.substring(origString.indexOf(searchString) + searchLength);
-            counter++;
-        }
-        */
         int length = searchString.length();
         for (int i = 0;i < origString.length()-length+1; i++)
              {
@@ -71,4 +64,17 @@ public class StringLoops {
              }
         return counter;
     }
+
+    public String removeString(String searchString, String origString)
+    {
+        String returnStr = "";
+        int searchLength = searchString.length();
+        while (origString.indexOf(searchString) != -1)
+        {
+            String reducedStr = origString.substring(origString.indexOf(0, origString.indexOf(searchString))) + origString.substring(origString.indexOf(searchString) + searchLength);
+            returnStr = reducedStr;
+        }
+        return returnStr;
+    }
+
 }
