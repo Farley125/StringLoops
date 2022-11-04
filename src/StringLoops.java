@@ -69,12 +69,16 @@ public class StringLoops {
     {
         String returnStr = "";
         int searchLength = searchString.length();
-        while (origString.indexOf(searchString) != -1)
+        String reducedStr = origString;
+        while (reducedStr.indexOf(searchString) != -1)
         {
-            String reducedStr = origString.substring(origString.indexOf(0, origString.indexOf(searchString))) + origString.substring(origString.indexOf(searchString) + searchLength);
+            reducedStr = reducedStr.substring(0, reducedStr.indexOf(searchString)) + reducedStr.substring(reducedStr.indexOf(searchString) + searchLength);
             returnStr = reducedStr;
         }
         return returnStr;
     }
+
+
+
 
 }
